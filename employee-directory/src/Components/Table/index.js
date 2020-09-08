@@ -1,53 +1,36 @@
-import React, { Component } from "react";
-import Employees from "../Employees";
+import React from "react";
+import Employees from "../Employees"
 
-class Table extends Component {
-    constructor(props) {
-        super(props)
-    }
-    // resultsList(props) {
-    //     const employees = props.employees;
-    //     const employeesList = employees.map((employee) =>
-    //         <tr>{employee}</tr>;
-    // }
+function Table(props) {
 
+    return (
 
-    render() {
-        return (
-            <table className="striped responsive-table" >
-                <thead>
-                    <tr>
-                        <th>Picture</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>Location</th>
-                        <th>Email</th>
-                        <th>Login</th>
-                        <th>DOB</th>
-                        <th>Registered</th>
-                        <th>Phone</th>
-                        <th>Cell</th>
-                        <th>Id</th>
-                    </tr>
-                </thead>
+        <table className="striped responsive-table" >
+            <thead>
+                <tr>
+                    <th>Picture</th>
+                    <th onClick={props.sortbyName}>Name</th>
+                    <th>Location</th>
+                    <th onClick={props.sortbyEmail}>Email</th>
+                </tr>
+            </thead>
 
-                <tbody>
-                    <tr>
-                        <th>Picture: {this.state.picture}</th>
-                        <td>Name: {this.state.name}</td>
-                        <td>Gender: {this.state.gender}</td>
-                        <td>Location: {this.state.location}</td>
-                        <td>Email: {this.state.email}</td>
-                        <td>Login: {this.state.login}</td>
-                        <td>DOB: {this.state.dob}</td>
-                        <td>Registered: {this.state.registered}</td>
-                        <td>Phone: {this.state.phone}</td>
-                        <td>Cell: {this.state.cell}</td>
-                        <td>Id: {this.state.id}</td>
-                    </tr>
-                </tbody>
-            </table>
-        )
-    }
+            <tbody>
+                {console.log(this.props.state.name)}
+                <tr>
+                    <th>Picture: {this.props.state.picture}</th>
+                    <td>Name: {this.props.state.name}</td>
+                    <td>Location: {this.props.state.location}</td>
+                    <td>Email: {this.props.state.email}</td>
+                    <td>Login: {this.props.state.login}</td>
+                    <td>DOB: {this.props.state.dob}</td>
+                    <td>Registered: {this.props.state.registered}</td>
+                    <td>Phone: {this.props.state.phone}</td>
+                    <td>Cell: {this.props.state.cell}</td>
+                    <td>Id: {this.props.state.id}</td>
+                </tr>
+            </tbody>
+        </table>
+    )
 }
 export default Table;
