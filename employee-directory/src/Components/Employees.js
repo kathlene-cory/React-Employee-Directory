@@ -65,6 +65,7 @@ class Employees extends Component {
 
 
     };
+
     employeeSearch = () => {
         API.getUsers()
             .then(res => this.setState({
