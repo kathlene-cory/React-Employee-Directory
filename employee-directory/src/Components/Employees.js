@@ -22,11 +22,7 @@ class Employees extends Component {
     render() {
         return (
             <div>
-                <div>Employees: {this.state.employees}</div>
-                <div>Name: {this.state.name}</div>
-                <div>Email: {this.state.email} </div>
-                <div>Location: {this.state.location}</div>
-                <div>Login: {this.state.login}</div>
+                <Table />
             </div>
         );
     }

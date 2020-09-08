@@ -3,7 +3,11 @@ import Employees from "../Employees";
 
 class Table extends Component {
 
-
+    // resultsList(props) {
+    //     const employees = props.employees;
+    //     const employeesList = employees.map((employee) =>
+    //         <tr>{employee}</tr>;
+    // }
 
 
     render() {
@@ -11,27 +15,33 @@ class Table extends Component {
             <table className="striped responsive-table" >
                 <thead>
                     <tr>
+                        <th>Picture</th>
                         <th>Name</th>
-                        <th>Item Name</th>
-                        <th>Item Price</th>
+                        <th>Gender</th>
+                        <th>Location</th>
+                        <th>Email</th>
+                        <th>Login</th>
+                        <th>DOB</th>
+                        <th>Registered</th>
+                        <th>Phone</th>
+                        <th>Cell</th>
+                        <th>Id</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
-                        <td>Alvin</td>
-                        <td>Eclair</td>
-                        <td>$0.87</td>
-                    </tr>
-                    <tr>
-                        <td>Alan</td>
-                        <td>Jellybean</td>
-                        <td>$3.76</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>Lollipop</td>
-                        <td>$7.00</td>
+                        <th>Picture: {this.state.picture}</th>
+                        <td>Name: {this.state.name}</td>
+                        <td>Gender: {this.state.gender}</td>
+                        <td>Location: {this.state.location}</td>
+                        <td>Email: {this.state.email}</td>
+                        <td>Login: {this.state.login}</td>
+                        <td>DOB: {this.state.dob}</td>
+                        <td>Registered: {this.state.registered}</td>
+                        <td>Phone: {this.state.phone}</td>
+                        <td>Cell: {this.state.cell}</td>
+                        <td>Id: {this.state.id}</td>
                     </tr>
                 </tbody>
             </table>
