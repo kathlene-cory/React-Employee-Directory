@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Employees from "../Employees";
 
 class Table extends Component {
-
+    constructor(props) {
+        super(props)
+    }
     // resultsList(props) {
     //     const employees = props.employees;
     //     const employeesList = employees.map((employee) =>

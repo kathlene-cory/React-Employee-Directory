@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import API from "../utils/API";
+import Table from "./Table"
 
 class Employees extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            employees: "",
+            employees: [],
             name: "",
             email: "",
             location: "",
