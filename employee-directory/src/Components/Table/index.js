@@ -8,20 +8,25 @@ class Table extends Component {
                 <thead>
                     <tr>
                         <th>Picture</th>
-                        <th onClick={this.props.sortbyName}>Name</th>
+                        <th onClick={this.props.sortbyName}>First Name</th>
+                        <th onClick={this.props.sortbyName}>Last Name</th>
                         <th>Location</th>
-                        <th onClick={this.props.sortbyEmail}>Email</th>
+                        <th onClick={() => this.props.sortByEmail()}>Email</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {console.log(this.props.state)}
-                    <tr>
-                        <th>Picture: {this.props.state.picture}</th>
-                        <td>Name: {this.props.state.name}</td>
-                        <td>Name: {this.props.state.location}</td>
-                        <td>Email: {this.props.state.email}</td>
-                    </tr>
+                    {console.log(this.props.employees)}
+
+                    {this.props.employees.map(employee =>
+                        <tr>
+                            <td>{employee.picture.thumbnail}</td>
+                            <td>{employee.name.first}</td>
+                            <td>{employee.name.last}</td>
+                            <td>{employee.location.city}</td>
+                            <td>{employee.email}</td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
         )
