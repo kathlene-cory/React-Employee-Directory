@@ -47,11 +47,51 @@ class Employees extends Component {
         }
     }
 
+    sortByFirstName = () => {
+        let search = this.state.searchedEmployees;
+        if (this.state.order === "asc") {
+            let searchResults = search.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1)
+            this.setState({
+                searchedEmployees: searchResults,
+                order: "desc"
+            })
+        } else {
+            let searchResults = search.sort((a, b) => (a.name.first > b.name.first) ? -1 : 1)
+            this.setState({
+                searchedEmployees: searchResults,
+                order: "asc"
+            })
+
+        }
+    }
+    sortByLastName = () => {
+        let search = this.state.searchedEmployees;
+        if (this.state.order === "asc") {
+            let searchResults = search.sort((a, b) => (a.name.first > b.name.last) ? 1 : -1)
+            this.setState({
+                searchedEmployees: searchResults,
+                order: "desc"
+            })
+        } else {
+            let searchResults = search.sort((a, b) => (a.name.first > b.name.last) ? -1 : 1)
+            this.setState({
+                searchedEmployees: searchResults,
+                order: "asc"
+            })
+
+        }
+    }
     render() {
         return (
             <div>
-                <input type="text" onChange={this.handleSearch} />
-                <Table employees={this.state.searchedEmployees} sortByEmail={this.sortByEmail} />
+                <div className="row">
+                    <input className="col s10" type="text" placeholder="Search here or click on any of the filters below" onChange={this.handleSearch} />
+                    <span className="material-icons col s2">
+                        person_search
+                    </span>
+                </div>
+
+                <Table employees={this.state.searchedEmployees} sortByEmail={this.sortByEmail} sortByFirstName={this.sortByFirstName} sortByLastName={this.sortByLastName} />
             </div>
         );
     }
@@ -61,25 +101,9 @@ class Employees extends Component {
 
 export default Employees;
 
-  // Ask tutor about sort or map
+          // Ask tutor about sort or map
 
-    // sortByName = () => {
-    //     let search = this.state.searchedEmployees;
-    //     if (this.state.order === "asc") {
-    //         let searchResults = search.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1)
-    //         this.setState({
-    //             searchedEmployees: searchResults,
-    //             order: "desc"
-    //         })
-    //     } else {
-    //         let searchResults = search.sort((a, b) => (a.name.first > b.name.first) ? -1 : 1)
-    //         this.setState({
-    //             searchedEmployees: searchResults,
-    //             order: "asc"
-    //         })
 
-    //     }
-    // }
 
     // // Even though I use set state in componentDidMount, it only renders once. 
     // handleInputChange = event => {

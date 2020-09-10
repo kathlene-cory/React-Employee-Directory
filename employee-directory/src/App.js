@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
-import Employees from "./Components/Employees.js"
-
+import Footer from "./Components/Footer/index.js";
+import Wrapper from "./Components/Wrapper/index";
+import Header from "./Components/Header/index"
 function App() {
   return (
     <>
-      <Employees />
+      <Header />
+      <br />
+      <Wrapper />
+      <Footer />
     </>
   );
 }

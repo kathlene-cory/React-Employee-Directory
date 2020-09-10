@@ -1,8 +1,12 @@
 import React from "react";
-import "./style.css";
+import Employees from "../Employees.js";
 
-function Wrapper(props) {
-    return <main className="wrapper" {...props} />;
+function Wrapper() {
+    return (
+        <div className="container">
+            <Employees />
+        </div>
+    );
 }
 
 export default Wrapper;
